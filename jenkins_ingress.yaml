@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: jenkins
+  name: jenkins
+  namespace: automate 
+spec:
+  rules:
+  - host: jenkins.dev1.pkhamdee.com
+    http:
+      paths:
+      - backend:
+          serviceName: jenkins-jenkins-k8s
+          servicePort: 8080
