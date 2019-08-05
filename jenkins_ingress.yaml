@@ -1,13 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  labels:
-    app: jenkins
-  name: jenkins
-  namespace: automate 
+  name: jenkins-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    ingress.kubernetes.io/rewrite-target: /
+    ingress.kubernetes.io/ssl-redirect: "false"
+  namespace: jenkins 
 spec:
+  tls:
+  - secretName: tls-kubernetes
   rules:
-  - host: jenkins.dev1.pkhamdee.com
+  - host: jenkins.dev1.pcfgcp.pkhamdee.com
     http:
       paths:
       - backend:
