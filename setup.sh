@@ -1,6 +1,6 @@
 export DOCKER_REG=harbor.pcfgcp.pkhamdee.com/library
 export DOCKER_USR=admin
-export DOCKER_PWD=Bekind
+export DOCKER_PWD=xxxx
 export DOCKER_EML=pkhamdee@pivota.io
 
 kubectl create namespace jenkins
